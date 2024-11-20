@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/static/images/logo-mb.png" type="image/png">
+<link rel="stylesheet" href="/static/css/button.css">
+    <title>Add User</title>
+    <style>
+
+        .profile-image{
+            position: relative;
+        }
+
+        .profile-image:before {
+    content: "choose picture";
+    position: absolute;
+    padding: 11px 17px;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    background-color: #e9ecef;
+}
+        .input-group-text{
+            background-color: #ced4da !important;
+        }
+        @media (min-width : 1024px) {
+            .card {
+                width: 35% !important;
+                left: 8%;
+            }
+        }
+
+
+
+
+
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <link rel="shortcut icon" href="/static/images/logo-mb.png" type="image/png">
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+        <link rel="stylesheet" href="/static/css/app.css">
+
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <img src="/static/images/logo-lg.png" alt="Comapny logo">
+            <div class="sidebar-close" id="sidebar-close">
+                <i class='bx bx-left-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-info">
+                <img src="/static/images/{{ session['image'] }}" alt="User picture" class="profile-image">
+                <div class="sidebar-user-name">
+                   {{ session['username'] }}
+
+                </div>
+            </div>
+            <form method="post" action="/logout">
+            <button type="submit" class="btn btn-outline">
+                <i class='bx bx-log-out bx-flip-horizontal'></i>
+            </button>
+                </form>
+        </div>
+        <!-- SIDEBAR MENU -->
+        <ul class="sidebar-menu">
+            <li>
+                <a href="/Allusers" class="active">
+                    <i class='bx bx-home'></i>
+                    <span>dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/ShowMessages">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANNJREFUSEvtleERATEQhb+rQAmohFLohEooQQlKoAJ0QAXMM8nNXUgym0n8kr+3+77dt8leR+PTNdYnBVgCO2BmLOIKrIGj8lIABU6N4j5cufMcwKqtTvfAwiW+i689A0EuMUAVz4FnDFDF8xTAk63e+3hvd7SDP+CnFt38Bhi+g1oz0G1cfVsVtQCjW9iigyjgDkwKH0HveZg/7ECrQsvKukEl3nueAoTfwplsgY21w9Q29YCHq/BgFc+tawHOTvxUIp4DqGJ5q+EXn9o/nI9CmgNeUSotGQr1HvoAAAAASUVORK5CYII="/>                    <span>ShowMessages</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/information_contact">
+
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQJJREFUSEvFleERATEQhb+rABWgAkqgAkqgAlSADqgAJeiADnRAB6iAWZMzmUjOxuXG/k7et3nJy2ZUXFnF+vgAQ2AOdEvAD0Bf9vsAF6BZQjzf+tL2AR4JxN/asYAZsDUNTI2VoX6iTyDiK0dtUQD5AHyzpgHcHEALOAeOkARQB65aQL4udJIlIJbYNQI2qQCiI4CdsWpg7kRO4atoi2Jf70+AO3AyJEl6rYAa9Uz3xg75AuzqAZIHscstNWBshSvUsO+yVRatTYca/yWEE2uhCtAG5PPTlBs6lUWx88LOkAqg6Ty05n+AygeOjEz5Ejol/DkCkhHvRCuhG0hbUkVH7Akgri8ZHl1MZgAAAABJRU5ErkJggg=="/>
+                    <span>information_contact</span>
+                </a>
+            </li>
+
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-user-circle'></i>
+                    <span>Users</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="/Allusers">
+                            All users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Addusers">
+                            Add User
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-category'></i>
+                    <span>plans</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="/Plans">
+                            plans
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/AddPlan">
+                            Add Plan
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='fa-sharp fa-light fa-gear'></i>
+                    <span>features</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="/features">
+                            All features
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/AddNewfeature">
+                            Add feature
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+
+    <!-- END SIDEBAR -->
+  <div class="main">
+        <div class="main-header">
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class='bx bx-menu-alt-right'></i>
+            </div>
+            <div class="main-title">
+                dashboard
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card mt-3 bg-light"style ="background-color: #eee !important;margin: auto; justify-items: center">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">Add User</h4>
+                <form action="/Addusers" method="post" enctype = "multipart/form-data">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                     <input class="form-control" type="text" name="username" placeholder="username"  required >
+                    </div> <!-- form-group// -->
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                        </div>
+
+                <input class="form-control" type="email" placeholder="Email"  name="email" required />
+
+                    </div> <!-- form-group// -->
+
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+
+                <input class="form-control" type="password" placeholder="password"  name="password" required />
+
+                    </div> <!-- form-group// -->
+                 <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+
+                <input class="form-control" type="password" placeholder="confirm password"  name="confirmPassword" required />
+
+                    </div> <!-- form-group// -->
+  <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-image"></i> </span>
+                        </div>
+
+        <input style="    font-size: 8px;
+    border-radius: 6px;" class="form-control profile-image" name="picture" placeholder="Picture" type="file" >
+
+                    </div> <!-- form-group// -->
+
+
+
+                    <div class="form-group">
+                        <button type="submit" style="background-color: #4ea685;color: white;padding: 7px 10px ;border-radius: 5px;width: 100%;"> Save  </button>
+                    </div> <!-- form-group// -->
+                </form>
+            </article>
+        </div> <!-- card.// -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- APP JS -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

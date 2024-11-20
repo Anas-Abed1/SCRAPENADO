@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Contact</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Corporate Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Rappo HTML Template v1.0">
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="/static/plugins/bootstrap/bootstrap.min.css">
+  <!-- Animate -->
+  <link rel="stylesheet" href="/static/plugins/animate-css/animate.css">
+  <!-- Icon Font css -->
+  <link rel="stylesheet" href="/static/plugins/fontawesome/css/all.css">
+  <link rel="stylesheet" href="/static/plugins/fonts/Pe-icon-7-stroke.css">
+  <!-- Themify icon Css -->
+  <link rel="stylesheet" href="/static/plugins/themify/css/themify-icons.css">
+  <!-- Slick Carousel CSS -->
+  <link rel="stylesheet" href="/static/plugins/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="/static/plugins/slick-carousel/slick/slick-theme.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  
+  <!--Favicon-->
+  <link rel="icon" href="/static/images/favicon.png" type="image/x-icon">
+
+</head>
+<body id="top-header">
+<!-- LOADER TEMPLATE -->
+<div id="page-loader">
+  <div class="loader-icon fa fa-spin colored-border"></div>
+</div>
+<!-- /LOADER TEMPLATE -->
+
+
+<!-- NAVBAR
+    ================================================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary main-nav navbar-togglable rounded-radius">
+
+      <a class="navbar-brand d-lg-none d-block" href="/home">
+        <h4 class="h3 mb-0">home</h4>
+      </a>
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+      </button>
+
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse has-dropdown" id="navbarCollapse">
+        <!-- Links -->
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a href="/home" class="nav-link js-scroll-trigger">
+              Home
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a href="/About" class="nav-link js-scroll-trigger">
+              About
+            </a>
+          </li>
+
+          <li class="nav-item ">
+            <a href="/Pricing" class="nav-link js-scroll-trigger">
+              Pricing
+            </a>
+          </li>
+
+
+          <li class="nav-item ">
+            <a href="/contact" class="nav-link">
+              Contact
+            </a>
+          </li>
+
+               <li class="nav-item ">
+            <a href="/login" class="nav-link">
+              login
+            </a>
+          </li>
+
+                <li class="nav-item ">
+            <a href="/register" class="nav-link">
+              register
+            </a>
+          </li>
+        </ul>
+
+        <ul class="ml-lg-auto list-unstyled m-0">
+          <li><a href="/contact" class="btn btn-trans-white btn-circled">Get a quote</a></li>
+        </ul>
+      </div> <!-- / .navbar-collapse -->
+    </nav>
+
+<!-- HERO
+================================================== -->
+<section class="page-banner-area page-contact">
+    <div class="overlay"></div>
+    <!-- Content -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-md-12 col-12 text-center">
+                <div class="page-banner-content">
+                    <h1 class="display-4 font-weight-bold">Got a question?</h1>
+                    <p>We'd love to talk about how we can help you.</p>
+                </div>
+            </div>
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
+</section>
+
+
+  <!-- SECTIONS
+    ================================================== -->
+    <section id="contact-info">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="contact-info-block text-center">
+                        <i class="pe-7s-map-marker"></i>
+                        <h4>Address</h4>
+                        <p class="lead">{{ session['Address']}}</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="contact-info-block text-center">
+                        <i class="pe-7s-mail"></i>
+                        <h4>Email</h4>
+                        <p class="lead">{{ session['email'] }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="contact-info-block text-center">
+                        <i class="pe-7s-phone"></i>
+                        <h4>Phone Number</h4>
+                        <p class="lead">{{ session['phone'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-8 col-lg-6">
+                    <h5>Leave a Message</h5>
+                    <!-- Heading -->
+                    <h2 class="section-title mb-2 ">
+                        Tell us about <span class="font-weight-normal">yourself</span>
+                    </h2>
+
+                    <!-- Subheading -->
+                    <p class="mb-5 ">
+                        Whether you have questions or you would just like to say hello, contact us.
+                    </p>
+
+                </div>
+            </div> <!-- / .row -->
+
+            <div class="row">
+                <div class="col-lg-6">
+                   <!-- form message -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-success contact__msg" style="display: none" role="alert">
+                                Your message was sent successfully.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end message -->
+                    <!-- Contacts Form -->
+                    <form class="contact_form" action="/Contact" method="post">
+                        <div class="row">
+                            <!-- Input -->
+                            <div class="col-sm-6 mb-6">
+                                <div class="form-group">
+                                    <label class="h6 small d-block text-uppercase">
+                                        Your name
+                                        <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="input-group">
+                                        <input class="form-control" name="name" id="name" required="" placeholder="John Doe" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Input -->
+
+                            <!-- Input -->
+                            <div class="col-sm-6 mb-6">
+                                <div class="form-group">
+                                    <label class="h6 small d-block text-uppercase">
+                                        Your email address
+                                        <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="input-group ">
+                                        <input class="form-control" name="email" id="email" required="" placeholder="john@gmail.com" type="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Input -->
+
+                            <div class="w-100"></div>
+
+                            <!-- Input -->
+                            <div class="col-sm-6 mb-6">
+                                <div class="form-group">
+                                    <label class="h6 small d-block text-uppercase">
+                                        Subject
+                                        <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="input-group">
+                                        <input class="form-control" name="subject" id="subject" required="" placeholder="Web design" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Input -->
+
+                            <!-- Input -->
+                            <div class="col-sm-6 mb-6">
+                                <div class="form-group">
+                                    <label class="h6 small d-block text-uppercase">
+                                        Your Phone Number
+                                        <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="input-group ">
+                                        <input class="form-control" id="phone" name="phone" required="" placeholder="1-800-643-4500" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Input -->
+                        </div>
+
+                        <!-- Input -->
+                        <div class="form-group mb-5">
+                            <label class="h6 small d-block text-uppercase">
+                                How can we help you?
+                                <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="input-group">
+                                <textarea class="form-control" rows="4" name="message" id="message" required="" placeholder="Hi there, I would like to ..."></textarea>
+                            </div>
+                        </div>
+                        <!-- End Input -->
+
+                        <div class="">
+                           <input name="submit" type="submit" class="btn btn-primary btn-circled" value="Send Message">
+                           
+                            <p class="small pt-3">We'll get back to you in 1-2 business days.</p>
+                        </div>
+                    </form>
+                    <!-- End Contacts Form -->
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <!-- START MAP -->
+                    <div id="map" ></div>
+                    <!-- END MAP -->
+                </div>
+            </div>
+        </div>
+    </section>
+ <footer class="section " id="footer">
+   <div class="overlay footer-overlay"></div>
+   <!--Content -->
+   <div class="container">
+     <div class="row justify-content-start">
+       <div class="col-lg-4 col-sm-12">
+         <div class="footer-widget">
+           <!-- Brand -->
+           <a href="/home" class="footer-brand text-white">
+             SCRAPENADO
+           </a>
+           <p>We are one of the Top 3 web data scraping companies in the world providing custom data gathering and data analysis solutions to customers ranging from startups to Fortune 50 companies.</p>
+         </div>
+       </div>
+
+       <div class="col-lg-3 ml-lg-auto col-sm-12">
+         <div class="footer-widget">
+           <h3>Account</h3>
+           <!-- Links -->
+           <ul class="footer-links ">
+             <li>
+               <a href="/login">
+                 login
+               </a>
+             </li>
+             <li>
+               <a href="/register">
+                 register
+               </a>
+             </li>
+             <li>
+               <a href="/home">
+                 home
+               </a>
+             </li>
+             <li>
+               <a href="/About">
+                 About
+               </a>
+             </li>
+             <li>
+               <a href="/contact">
+                 contact
+               </a>
+             </li>
+           </ul>
+         </div>
+       </div>
+
+
+
+
+       <div class="col-lg-2 col-sm-6">
+         <div class="footer-widget">
+           <h3>Socials</h3>
+           <!-- Links -->
+           <ul class="list-unstyled footer-links">
+             <li><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i>Facebook</a></li>
+             <li>
+               <a href="https://www.twitter.com"><i class="fab fa-twitter"></i>Twitter
+               </a></li>
+             <li><a href="https://www.pinterest.com"><i class="fab fa-pinterest-p"></i>Pinterest
+               </a></li>
+             <li><a href="https://linkedin.com/"><i class="fab fa-linkedin"></i>linkedin
+               </a></li>
+             <li><a href="https://www.youtube.com"><i class="fab fa-youtube"></i>YouTube
+               </a></li>
+           </ul>
+         </div>
+       </div>
+     </div> <!-- / .row -->
+
+
+     <div class="row text-right pt-5">
+       <div class="col-lg-12">
+         <div class="overflow-hidden">
+           <!-- Copyright -->
+          <p class="footer-copy">
+            Copyright &copy; <script>var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+          </script> <a class="current-year" href="/home">SCRAPENADO</a>
+          </p>
+         </div>
+       </div>
+     </div> <!-- / .row -->
+   </div> <!-- / .container -->
+ </footer>
+
+
+ <!--  Page Scroll to Top  -->
+
+ <a id="scroll-to-top" class="scroll-to-top js-scroll-trigger" href="#top-header">
+   <i class="fa fa-angle-up"></i>
+ </a>
+
+  <!-- 
+  Essential Scripts
+  =====================================-->
+  <!-- jQuery -->
+  <script src="/static/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/static/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- Slick Slider -->
+  <script src="/static/plugins/slick-carousel/slick/slick.min.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+  <script src=/static/"plugins/google-map/gmap.js"></script>
+
+  <script src="/static/js/script.js"></script>
+
+</body>
+</html>
+   

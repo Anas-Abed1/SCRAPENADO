@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/static/images/logo-mb.png" type="image/png">
+
+    <title>Search Product</title>
+   <link rel="stylesheet" href="/static/css/button.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+ <link rel="shortcut icon" href="/static/images/logo-mb.png" type="image/png">
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+        <link rel="stylesheet" href="/static/css/app.css">
+        <link rel="stylesheet" href="/static/css/table.css">
+    </head>
+<body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <img src="/static/images/logo-lg.png" alt="Comapny logo">
+            <div class="sidebar-close" id="sidebar-close">
+                <i class='bx bx-left-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-info">
+                <img src="/static/images/{{ session['image'] }}" alt="User picture" class="profile-image">
+                <div class="sidebar-user-name">
+                   {{ session['username'] }}
+
+                </div>
+            </div>
+            <form method="post" action="/logout">
+            <button type="submit" class="btn btn-outline">
+                <i class='bx bx-log-out bx-flip-horizontal'></i>
+            </button>
+                </form>
+        </div>
+        <!-- SIDEBAR MENU -->
+        <ul class="sidebar-menu">
+            <li>
+                <a href="/Allusers" class="active">
+                    <i class='bx bx-home'></i>
+                    <span>dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/ShowMessages">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANNJREFUSEvtleERATEQhb+rQAmohFLohEooQQlKoAJ0QAXMM8nNXUgym0n8kr+3+77dt8leR+PTNdYnBVgCO2BmLOIKrIGj8lIABU6N4j5cufMcwKqtTvfAwiW+i689A0EuMUAVz4FnDFDF8xTAk63e+3hvd7SDP+CnFt38Bhi+g1oz0G1cfVsVtQCjW9iigyjgDkwKH0HveZg/7ECrQsvKukEl3nueAoTfwplsgY21w9Q29YCHq/BgFc+tawHOTvxUIp4DqGJ5q+EXn9o/nI9CmgNeUSotGQr1HvoAAAAASUVORK5CYII="/>                    <span>ShowMessages</span>
+                </a>
+            </li>
+
+            <li>
+                  <a href="/Compare_product">
+
+                    <span>compare_product</span>
+                </a>
+            </li>
+
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-user-circle'></i>
+                    <span>Users</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="/Allusers">
+                            All users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Addusers">
+                            Add User
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-category'></i>
+                    <span>plans</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="/Plans">
+                            plans
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/AddPlan">
+                            Add Plan
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='fa-sharp fa-light fa-gear'></i>
+                    <span>features</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="/features">
+                            All features
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/AddNewfeature">
+                            Add feature
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+
+    <!-- END SIDEBAR -->
+  <div class="main">
+        <div class="main-header">
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class='bx bx-menu-alt-right'></i>
+            </div>
+            <div class="main-title">
+                dashboard
+            </div>
+        </div>
+       <button style="color: green;
+    border: 1px solid;
+    background-color: lightgreen;
+    bottom: 1px;
+    position: relative;
+    left: 20px;" onclick="exportTableToCSV('Next-DATA.csv')">Export To CSV File</button>
+    </div>
+
+    <div class="container">
+
+
+        <table>
+          <tr class="rhead">
+            <th>product_image</th>
+            <th>product_name</th>
+            <th>product_price</th>
+            <th>product_rate</th>
+            <th>Save</th>
+
+          </tr>
+            {% for  item in products %}
+          <tr class="rbody">
+            <td><img width="100" height="100" src="{{ item['img'] }}"></td>
+            <td>{{ item['title'] }}</td>
+            <td>{{ item['price'] }}</td>
+            <td>{{ item['rate'] }}</td>
+            <td>
+                <form action="/Save_product" method="POST" style="display: inline-block">
+                    <input type="hidden" name="image" value="{{ item['img'] }}">
+                    <input type="hidden" name="title" value="{{ item['title'] }}">
+                    <input type="hidden" name="price" value="{{ item['price'] }}">
+                    <input type="hidden" name="rate" value="{{ item['rate'] }}">
+                      <button style="background:none" ><input type="submit" value=""><i class="fa fa-save"></i></button>
+              </form>
+
+            </td>
+          </tr>
+             {% endfor %}
+        </table>
+      </div>
+
+
+    <script>
+        function exportTableToExcel(filename) {
+            var wb = XLSX.utils.table_to_book(document.querySelector("table"), { sheet: "Sheet 1" });
+            XLSX.writeFile(wb, filename);
+        }
+    </script>
